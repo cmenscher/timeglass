@@ -20,6 +20,7 @@
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/index.html \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/lib \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/res \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/views \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/app/app.js \
@@ -36,6 +37,7 @@
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/css/scss/index.scss \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/icons \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/logo.png \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/nyc_panoram.jpg \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/splash \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/icons/icon114px.png \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/img/icons/icon144px.png \
@@ -58,6 +60,17 @@
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/lib/viewport.jquery.js \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/lib/webkitTransform.jquery.js \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/lib/zepto.min.js \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device-motion \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.network-information \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device/www \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device/www/device.js \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/Acceleration.js \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.device-motion/www/accelerometer.js \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www/Connection.js \
+/Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/plugins/org.apache.cordova.network-information/www/network.js \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/res/icon \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/res/screen \
 /Users/coreymenscher/Dropbox/code/GoogleGlass/timeglass/platforms/android/assets/www/res/icon/android \

@@ -22,18 +22,3 @@ angular.module("glassApp.directives", [])
              replace: false,
         }
     })
-
-    //  .directive("mobileapp", function() {
-    //     return {
-    //         controller: ["$rootScope", "$scope", "$element", "$attrs", "$location", function($rootScope, $scope, $element, $attrs, $location) {
-    //             var init = function() {
-    //                 console.log("initializing panels...");
-    //             }
-
-    //             init();
-    //         }],
-    //          restrict: "A",
-
-    //          replace: true
-    //     }
-    // })

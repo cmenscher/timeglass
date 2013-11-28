@@ -2,12 +2,12 @@
 
 var controllers = {};
 
-controllers.MainController = function ($rootScope, $scope) {
+controllers.MainController = ["$rootScope", "$scope", "DeviceService", function ($rootScope, $scope, DeviceService) {
 	var init = function () {
 
 	}
 
 	init();
-}
+}];
 
 glassApp.controller(controllers, []);

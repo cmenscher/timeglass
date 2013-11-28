@@ -57,4 +57,28 @@ glassApp.service("DeviceService", ["$rootScope", function($rootScope) {
 		}
 	}
 
+	this.setupTouchpad = function() {
+		var TAP = 13;
+		var SWIPE = 9
+
+		var tapCallback = function() {
+			console.log("Tap!");
+		}
+
+		var swipeCallback = function() {
+			console.log("Swipe!");
+		}
+
+        document.addEventListener('keydown',function(e) {
+			switch(e.keyCode) {
+				case TAP:
+					tapCallback();
+					break;
+				case SWIPE:
+					swipeCallback();
+					break;
+			}
+        });
+	}
+
 }]);

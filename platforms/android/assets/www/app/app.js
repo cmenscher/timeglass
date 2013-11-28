@@ -148,8 +148,18 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
         $rootScope.phoneGap.init();
 
         $rootScope.$on("deviceReady", function() {
-            DeviceService.watchAcceleration()
+            DeviceService.setupTouchpad();
+            DeviceService.watchAcceleration();
         });
+
+        // Listen for 'touchpad' events, which get registered as keydown events with keyCode 9 and 13
+        // document.addEventListener('keydown',keyController);
+
+        // function keyController(e){
+        //     // Show results in document body
+        //     console.log(e.keyCode);
+        // }
+
 
         console.log("\n\nReady...............FIGHT!\n\n"); //app initializing complete
     }
