@@ -1,0 +1,27 @@
+/**************************************************
+				GLOBAL WIDTHS & HEIGHTS
+**************************************************/
+/**************************************************
+				GLOBAL COLORS
+**************************************************/
+/**************************************************
+                POSITIONS
+***************************************************/
+/**************************************************
+                GLOBAL ELEMENTS
+***************************************************/
+body {
+  background-color: black;
+  color: white;
+  font-family: Roboto, Helvetica, Arial, Sans Serif;
+  font-size: 48px; }
+
+.app {
+  display: block;
+  position: absolute;
+  width: 640px;
+  height: 480px;
+  padding: 0px; }
+
+.timelineCard {
+  margin: auto; }

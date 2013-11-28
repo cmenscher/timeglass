@@ -1,0 +1,33 @@
+/**************************************************
+				GLOBAL WIDTHS & HEIGHTS
+**************************************************/
+$appWidth: 640px;
+$appHeight: 480px;
+
+/**************************************************
+				GLOBAL COLORS
+**************************************************/
+$backgroundColor: black;
+
+/**************************************************
+                POSITIONS
+***************************************************/
+
+/**************************************************
+                GLOBAL ELEMENTS
+***************************************************/
+body {
+	background-color: $backgroundColor;
+	color: white;
+	font-family: Roboto, Helvetica, Arial, Sans Serif;
+	font-size: 48px;
+}
+
+.app {
+    display: block;
+    position: absolute;
+    width: $appWidth;
+    height: $appHeight;
+    padding: 0px;
+    //border: 1px solid red;
+}
