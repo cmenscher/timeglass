@@ -152,15 +152,6 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
             DeviceService.watchAcceleration();
         });
 
-        // Listen for 'touchpad' events, which get registered as keydown events with keyCode 9 and 13
-        // document.addEventListener('keydown',keyController);
-
-        // function keyController(e){
-        //     // Show results in document body
-        //     console.log(e.keyCode);
-        // }
-
-
         console.log("\n\nReady...............FIGHT!\n\n"); //app initializing complete
     }
 

@@ -25,3 +25,13 @@ body {
 
 .timelineCard {
   margin: auto; }
+
+.accel {
+  display: none; }
+  .accel.visible {
+    display: block; }
+
+.panoram {
+  display: none; }
+  .panoram.visible {
+    display: block; }

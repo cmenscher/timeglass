@@ -4,3 +4,19 @@
     margin: auto;
     //border: 1px solid blue;
 }
+
+.accel {
+	display: none;
+
+	&.visible {
+		display: block;
+	}
+}
+
+.panoram {
+	display: none;
+
+	&.visible {
+		display: block;
+	}
+}

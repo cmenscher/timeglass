@@ -60,13 +60,16 @@ glassApp.service("DeviceService", ["$rootScope", function($rootScope) {
 	this.setupTouchpad = function() {
 		var TAP = 13;
 		var SWIPE = 9
+		var $rootScope = angular.element(document).scope();
 
 		var tapCallback = function() {
 			console.log("Tap!");
-		}
+    		$rootScope.$broadcast("tap");
+    	}
 
 		var swipeCallback = function() {
 			console.log("Swipe!");
+    		$rootScope.$broadcast("swipe");
 		}
 
         document.addEventListener('keydown',function(e) {
