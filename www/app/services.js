@@ -1,31 +1,26 @@
 "use strict";
 
 /****************************************************************
-            CITIBIKE STATION SERVICE
+            MAIN APP SERVICE
 ****************************************************************/
 glassApp.service("MainService", ["$rootScope", "DeviceService", function($rootScope, DeviceService) {
 
-	this.init  = function(callback) {
-		if(arguments.length < 1) {
-			var callback = function() {
-				console.log("Hunt complete");
-			}
+	this.looper = function(loopFunction, interval) {
+		if(arguments.length < 2) {
+			var interval = 500; //millis
 		}
-		DeviceService.getLocation(function(loc) {
+		//console.log("Creating app loop...");
+		// console.log(loopFunction);
+		clearInterval($rootScope.looper);
+		$rootScope.looper = setInterval(loopFunction, interval);
+	}
 
-			var params = {
-				lat: loc.coords.latitude,
-				lon: loc.coords.longitude,
-			}
-
-			$.getJSON($rootScope.apiUrl, params)
-			.done(function(data) {
-
-			});
-		});
-	};
 }]);
 
+
+/****************************************************************
+            DEVICE/HARDWARE SERVICE
+****************************************************************/
 glassApp.service("DeviceService", ["$rootScope", function($rootScope) {
 	this.getLocation = function(callback) {
 		if (navigator.geolocation) {
@@ -54,6 +49,40 @@ glassApp.service("DeviceService", ["$rootScope", function($rootScope) {
 			}
 
 			navigator.accelerometer.watchAcceleration(accelerationSuccess, accelerationFail, frequency);
+		}
+	}
+
+	this.getCurrentHeading = function(success, fail) {
+		if(navigator.compass) {
+			navigator.compass.getCurrentHeading(compassSuccess, compassFail);
+		}
+
+		var compassSuccess = function(data) {
+			$rootScope.heading = data.magenticHeading;
+		}
+
+		var compassFail = function() {
+			console.log("Compass reading FAIL!");
+		}
+	}
+
+	this.watchHeading = function(frequency) {
+		if(navigator.compass) {
+			navigator.compass.clearWatch();
+			
+			if(arguments.length === 0) {
+				var frequency = {frequency:250}; //millis
+			}
+
+			var compassSuccess = function(data) {
+				$rootScope.heading = data.magneticHeading;
+			}
+
+			var compassFail = function() {
+				console.log("Compass reading FAIL!");
+			}
+
+			navigator.compass.watchHeading(compassSuccess, compassFail, frequency);
 		}
 	}
 

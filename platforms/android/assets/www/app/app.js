@@ -39,7 +39,7 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
     // *** This should be changed to false when deploying to production! ***
     $rootScope.debugMode = true;
 
-    $rootScope.loopTimer = {};
+    $rootScope.looper = {};
 
 
     /****************************************************************
@@ -74,8 +74,18 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
     /**************************************************
                     APP DATA
     **************************************************/
-    $rootScope.acceleration = {}; // holds current acceleration data (as an object)
+    $rootScope.acceleration = {}; // holds current acceleration data
 
+    $rootScope.startRotation = null;
+    $rootScope.startTilt = null;
+    $rootScope.rotation = 0;
+    $rootScope.tilt = 0;
+
+    $rootScope.heading = null;
+    $rootScope.startHeading = 0;
+
+
+    
     /****************************************************************
                 GLOBAL METHODS (non-utility)
     ****************************************************************/
@@ -149,8 +159,13 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
 
         $rootScope.$on("deviceReady", function() {
             DeviceService.setupTouchpad();
-            DeviceService.watchAcceleration();
+            // DeviceService.watchAcceleration();
+            // // DeviceService.watchHeading();
         });
+
+        $rootScope.$on("$locationChangeStart", function(ev, newUrl, oldUrl) {
+            console.log("Changing URL to " + newUrl);
+        })
 
         console.log("\n\nReady...............FIGHT!\n\n"); //app initializing complete
     }

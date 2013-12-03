@@ -1,8 +1,16 @@
 @import "global";
 
 .timelineCard {
-    margin: auto;
-    //border: 1px solid blue;
+	position: absolute;
+	top: 0px;
+	left: 0px;
+	width: 640px;
+	height: 480px;
+    //margin: auto;
+    margin: 0px;
+    padding: 0px;
+    overflow: hidden;
+    // border: 1px solid blue;
 }
 
 .accel {
@@ -16,7 +24,17 @@
 .panoram {
 	display: none;
 
+	.panoramImage {
+		display: inline-block;
+		position: relative;
+	}
+
 	&.visible {
+		position: absolute;
 		display: block;
+		margin: 0px;
+		padding: 0px;
+		top: 0px;
+		left: 0px;
 	}
 }

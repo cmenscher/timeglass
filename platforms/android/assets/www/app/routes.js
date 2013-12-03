@@ -1,10 +1,26 @@
  //This configures the routes and associates each route with a view and a controller
 glassApp.config(function ($routeProvider) {
     $routeProvider
-        .when('/',
+        .when("/",
             {
-                controller: 'MainController',
-                templateUrl: 'views/main.html'
+                controller: "PanoramController",
+                templateUrl: "views/panoram.html"
             })
-        .otherwise({ redirectTo: '/' });
+        .when("/compass",
+            {
+                controller: "CompassController",
+                templateUrl: "views/compass.html"
+            })
+        .when("/accel",
+            {
+                controller: "AccelController",
+                templateUrl: "views/accel.html"
+            })
+        .when("/panoram",
+	        {
+	        	controller: "PanoramController",
+	        	templateUrl: "views/panoram.html"
+
+	        })
+        .otherwise({ redirectTo: "/" });
 });
