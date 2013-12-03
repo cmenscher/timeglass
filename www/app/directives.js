@@ -109,53 +109,21 @@ angular.module("glassApp.directives", [])
                     }, 250);
                     //$image.height(window.innerHeight);
 
-                    // window.addEventListener('deviceorientation', function(ev) {
-
-                    //     /*
-                    //     alpha = the direction the device is facing according to the compass
-                    //     beta = the angle in degrees the device is tilted front-to-back
-                    //     gamma = the angle in degrees the device is tilted left-to-right.
-                    //     */
-
-                    //     // var orientation = ev;
-                    //     // var orientHTML = "";
-                    //     //orientHTML = "ORIENTATION<br />ALPHA: " + orientation.alpha + "<br />" + "BETA: " + orientation.beta + "<br />" + "GAMMA: " + orientation.gamma + "<br />";
-                    //     //$(".panoram").html(orientHTML);
-
-                    //     var lastRotation = $rootScope.rotation;
-                    //     var lastTilt = $rootScope.tilt;
-                    //     $rootScope.rotation = ev.alpha;
-                    //     $rootScope.tilt = ev.beta;
-
-                    //     if($rootScope.startRotation === null) {
-                    //         $rootScope.startRotation = ev.alpha;
-                    //     }
-
-                    //     if($rootScope.startTilt === null) {
-                    //         $rootScope.startTilt = ev.alpha;
-                    //     }
-
-
-                    //     //console.log($rootScope.rotation);
-
-                    //     var translateX = 0;
-                    //     var translateY = 0;
-                    //     if($rootScope.rotation % lastRotation + 5 || $rootScope.rotation < lastRotation -5) {
-                    //         translateX = Math.floor($rootScope.startRotation) + $rootScope.rotation;
-                    //     }
-
-                    //     var $image = $(".panoramImage");
-                    //     $image.css("-webkit-transform", "translate("+translateX+"px, 0px)");
-                    // }, false);
-
-                    $rootScope.startHeading = Math.floor($rootScope.heading); 
+                    //$rootScope.startHeading = Math.floor($rootScope.heading); 
                     MainService.looper(function() {
-                        var startHeading = Math.floor($rootScope.startHeading);
-                        var heading = Math.floor($rootScope.heading);
+                        // exit the function until the compass is returning data
+                        if($rootScope.startHeading === null) {
+                            console.log("No heading data...returning false");
+                            return false;
+                        }
+
+                        var startHeading = $rootScope.startHeading;
+                        var heading = $rootScope.heading;
                         var $image = $(".panoramImage");
 
                         var imgWidth = $image.width();
                         var imgHeight = $image.height();
+                        var centeredImage = (($image.width()/2)) + (window.innerWidth/2);
                         
                         //var degreesInPixels = Math.floor(imgWidth/360);
                         //console.log("degreesInPixels = " + degreesInPixels);
@@ -167,39 +135,36 @@ angular.module("glassApp.directives", [])
                         //     rotation = startHeading - heading;
                         // }
 
-                        rotation = heading - startHeading;
+                        // rotation = heading - startHeading;
 
-                        var pixelHeading = startHeading + rotation;
+                        // var pixelHeading = startHeading + rotation;
                         
-                        if(pixelHeading > 360) {
-                            pixelHeading = 360;
-                        } else if (pixelHeading < 0) {
-                            pixelHeading = 0;
-                        }
-
-                        //var pixelDist = pixelHeading * degreesInPixels;
-                        var pixelDist = map_range(pixelHeading, 0, 360, 0, imgWidth) * -1;
-                        console.log("startHeading = " + startHeading + "   heading = " + heading + "  pixelHeading = " + pixelHeading + "   pixelDist = " + pixelDist);
-                        // if(pixelDist < imgWidth*-1) {
-                        //     pixelDist = imgWidth * -1;
-                        // } else if(pixelDist > imgWidth) {
-                        //     pixelDist = imgWidth;
+                        // if(pixelHeading > 360) {
+                        //     pixelHeading = 360;
+                        // } else if (pixelHeading < 0) {
+                        //     pixelHeading = 0;
                         // }
 
+                        var pixelHeading = heading - startHeading;
+
+                        var pixelDist = map_range(pixelHeading, 0, 360, 0, centeredImage) * -1;
+                        console.log("centeredImage = " + centeredImage + "   startHeading = " + startHeading + "   heading = " + heading + "  pixelHeading = " + pixelHeading + "   pixelDist = " + pixelDist);
+
                         //console.log("Sliding to " + pixelDist + "px (" + pixelHeading + "º)...");
-                        $image.css("-webkit-transform", "translate(" + pixelDist + "px, 0px)");
+                        $image.css("-webkit-transform", "translate3d(" + pixelDist + "px, 0px, 0px)");
+                        $(".headingHUD").html(Math.floor(heading) + "&deg;");
                     }, 50);
 
                     $rootScope.$on("tap", function() {
                         console.log("Switching to Compass heading...");
-                        $location.path("/compass");
-                        $scope.$apply();
+                        //$location.path("/compass");
+                        // $scope.$apply();
                     });
 
                     $(".timelineCard").on("click", function() {
                         console.log("Switching to Compass heading...");
-                        $location.path("/compass");
-                        $scope.$apply();
+                        //$location.path("/compass");
+                        // $scope.$apply();
                     })
 
                 }

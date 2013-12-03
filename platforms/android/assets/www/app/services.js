@@ -75,6 +75,11 @@ glassApp.service("DeviceService", ["$rootScope", function($rootScope) {
 			}
 
 			var compassSuccess = function(data) {
+				//first set the startHeading when the first value is detected
+				if($rootScope.startHeading === null && data.magneticHeading != 0) {
+					$rootScope.startHeading = data.magneticHeading;
+					console.log("Set startHeading to: " + $rootScope.startHeading);
+				}
 				$rootScope.heading = data.magneticHeading;
 			}
 

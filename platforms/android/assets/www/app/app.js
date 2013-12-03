@@ -82,7 +82,7 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
     $rootScope.tilt = 0;
 
     $rootScope.heading = null;
-    $rootScope.startHeading = 0;
+    $rootScope.startHeading = null;
 
 
     
@@ -160,7 +160,7 @@ glassApp.run(["$rootScope", "$location", "$http", "DeviceService", function($roo
         $rootScope.$on("deviceReady", function() {
             DeviceService.setupTouchpad();
             // DeviceService.watchAcceleration();
-            // // DeviceService.watchHeading();
+            DeviceService.watchHeading({frequency: 100});
         });
 
         $rootScope.$on("$locationChangeStart", function(ev, newUrl, oldUrl) {
